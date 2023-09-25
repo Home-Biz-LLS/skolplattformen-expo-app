@@ -1,8 +1,8 @@
 import * as eva from '@eva-design/eva';
 import { StyleSheet } from 'react-native';
 import { Menu } from './components/Menu.component';
-import { NewsListItem } from './components/NewsListItem.component';
 import { ApplicationProvider } from '@ui-kitten/components';
+import { NewsList } from './components/NewsList.component';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       theme={'#fff'}
     >
       {/* <Menu /> */}
-      <NewsListItem />
+      <NewsList />
     </ApplicationProvider>
   );
 }

@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 // import { NewsItem } from '@skolplattformen/api'
+import { NewsItem } from '../libs/api/lib/types';
 import { StyleService, useStyleSheet } from '@ui-kitten/components';
 import moment from 'moment';
 import React, { ReactNode } from 'react';
@@ -16,41 +17,26 @@ import { Layout, Sizing, Typography } from '../styles';
 // import { Image } from './image.component';
 // import { RootStackParamList } from './navigation.component';
 
-// interface NewsListItemProps {
-//   item: NewsItem;
-//   children?: ReactNode;
-// }
+interface NewsListItemProps {
+  item: NewsItem;
+  // children?: ReactNode;
+}
 
 // type NewsListItemNavigationProp = StackNavigationProp<
 //   RootStackParamList,
 //   'NewsItem'
 // >;
 
-const item = {
-  id: 'asdfasdfasdfa',
-  author: 'Rektor Gustavsson',
-  header: 'Välkommen till skolan!',
-  intro:
-    'Hej alla barn och föräldrar och välkomna till Storskolan! Här kommer en del information som kan vara bra att känna till inför första dagen.',
-  body: '## Information till föräldrar \n\nSkolan börjar kl 08.00 och slutar 18.00. Kommer man sent eller blir sjuk så ska det anmälas via Skolplattformen. Se till så att dina barn har ätit frukost. Frukt är nyttigt! \n\n## Information till barn\n\nLek är tillåtet på rasterna men enbart på skolgården. Medtag ej egna leksaker. Tvätta händerna.',
-  imageUrl: '6607f9b923edb6f85aa4417bab43c0f8.jpg',
-  fullImageUrl:
-    'https://timbro.se/app/uploads/2020/10/broman-skolplattformen-1280x752.jpg',
-  imageAltText: 'Nyhetsbild. Bildtext ej tillgänglig.',
-  published: 'published date',
-  modified: 'modified date',
-};
-
 // const { width } = Dimensions.get('window');
 
 // export const NewsListItem = ({ item, children }: NewsListItemProps) => {
-export const NewsListItem = () => {
+export const NewsListItem = ({ item }: NewsListItemProps) => {
   const styles = useStyleSheet(themedStyles);
   // const navigation = useNavigation<NewsListItemNavigationProp>();
   // const child = useChild();
-  const hasDate = item.modified || item.published;
+  // const hasDate = item.modified || item.published;
 
-  const displayDate = hasDate ? moment(hasDate).fromNow() : null;
+  // const displayDate = hasDate ? moment(hasDate).fromNow() : null;
 
   return (
     <TouchableOpacity
@@ -70,8 +56,10 @@ export const NewsListItem = () => {
             <Text style={styles.title}>{item.header}</Text>
             <Text style={styles.subtitle}>
               {item.author}
-              {item.author && displayDate ? ' • ' : ''}
-              {displayDate}
+              {/* {item.author && displayDate ? ' • ' : ''}
+              {displayDate} */}
+              {'       '}
+              ||||| dates go here //! remove this
             </Text>
             <Text ellipsizeMode="tail" numberOfLines={2} style={styles.intro}>
               {/* {children ?? item.intro} */}
