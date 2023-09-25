@@ -12,7 +12,7 @@ export default function App() {
       {...eva}
       // @ts-expect-error Unknown error
       // customMapping={customMapping}
-      theme={'#fff'}
+      theme={eva.light}
     >
       {/* <Menu /> */}
       {/* <NewsList /> */}
