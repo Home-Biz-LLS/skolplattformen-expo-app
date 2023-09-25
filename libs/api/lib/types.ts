@@ -130,7 +130,7 @@ export interface Notification {
   id: string;
   sender: string;
   dateCreated: string;
-  dateModified: string;
+  dateModified?: string; // TODO: Check if this is correct as without the ? it gives an error
   message: string;
   url: string;
   category: string | null;

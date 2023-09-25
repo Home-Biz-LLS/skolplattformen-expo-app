@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Menu } from './components/Menu.component';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { NewsList } from './components/NewsList.component';
+import { NotificationsList } from './components/NotificationsList.component';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       theme={'#fff'}
     >
       {/* <Menu /> */}
-      <NewsList />
+      {/* <NewsList /> */}
+      <NotificationsList />
     </ApplicationProvider>
   );
 }
