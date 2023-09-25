@@ -1,6 +1,7 @@
 import * as eva from '@eva-design/eva';
 import { StyleSheet } from 'react-native';
 import { Menu } from './components/Menu.component';
+import { NewsListItem } from './components/NewsListItem.component';
 import { ApplicationProvider } from '@ui-kitten/components';
 
 export default function App() {
@@ -11,7 +12,8 @@ export default function App() {
       // customMapping={customMapping}
       theme={'#fff'}
     >
-      <Menu />
+      {/* <Menu /> */}
+      <NewsListItem />
     </ApplicationProvider>
   );
 }
