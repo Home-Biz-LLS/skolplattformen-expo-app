@@ -4,6 +4,7 @@ import { Menu } from './components/Menu.component';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { NewsList } from './components/NewsList.component';
 import { NotificationsList } from './components/NotificationsList.component';
+import { Classmates } from './components/Classmates.component';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
     >
       {/* <Menu /> */}
       {/* <NewsList /> */}
-      <NotificationsList />
+      {/* <NotificationsList /> */}
+      <Classmates />
     </ApplicationProvider>
   );
 }
