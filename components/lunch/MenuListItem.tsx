@@ -1,14 +1,47 @@
+import { MenuItem } from '../../libs/api/lib/types';
 import { StyleService, Text, useStyleSheet } from '@ui-kitten/components';
 import React from 'react';
 import { View } from 'react-native';
 import { Sizing, Typography } from '../../styles';
 
+interface MenuListItemProps {
+  item: MenuItem;
+}
+
+const menu = [
+  {
+    title: 'Måndag',
+    description: 'Kebabgryta ris<br/>Ratatouille med kikärter',
+  },
+  {
+    title: 'Tisdag',
+    description: 'Ost-broccolisås pasta Fusilli',
+  },
+  {
+    title: 'Onsdag',
+    description: 'Köttbullar potatis gräddsås lingon<br/>Falafel',
+  },
+  {
+    title: 'Torsdag',
+    description: 'Prinskorv potatis rödbetssallad +<br/>Inlagd och senapssill',
+  },
+  {
+    title: 'Fredag',
+    description:
+      'Avslutning  Varmkorv bröd ketchup senap<br/>( F-3 i matsalen från 10:30 )',
+  },
+];
+
 export const MenuListItem = () => {
   const styles = useStyleSheet(themedStyles);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>TEST TITLE</Text>
-      <Text category="p1">TEST DESCRIPTION</Text>
+      {menu.map(item => (
+        <>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text category="p1">{item.description}</Text>
+        </>
+      ))}
     </View>
   );
 };
